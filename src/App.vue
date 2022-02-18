@@ -1,8 +1,9 @@
 <template>
+  <button class="signout-button" @click="signOut">Sign Out</button>
   <!-- Check if user is available in the store, if not show auth compoenent -->
   <Auth v-if="!store.state.user" />
   <!-- If user is available, show the app -->
-  <HelloWorld v-else msg="Hello Vue 3 + Vite" />
+  <HelloWorld v-else msg="Hello World" />
 </template>
 
 <script>
@@ -14,8 +15,8 @@ import { supabase } from "./supabase";
 
 export default {
   components: {
-    HelloWorld,
     Auth,
+    HelloWorld,
   },
   setup() {
     // we initially verify if a user is logged in with Supabase
@@ -29,20 +30,17 @@ export default {
       }
     });
 
+    async function signOut() {
+      const { error } = await supabase.auth.signOut();
+    }
+
     return {
       store,
+
+      signOut,
     };
   },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>

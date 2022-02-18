@@ -4,7 +4,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 *,
 :before,
@@ -849,7 +848,7 @@ video {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 60px;
   display: inline-flex;
   width: 100px;
   align-items: center;
