@@ -811,15 +811,15 @@ video {
 .podcast-detail button:disabled {
   cursor: not-allowed;
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(74 120 128 / var(--tw-bg-opacity));
 }
 .podcast-detail button:disabled:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(74 222 128 / var(--tw-bg-opacity));
+  background-color: rgb(74 120 128 / var(--tw-bg-opacity));
 }
 .podcast-detail button:disabled:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(74 222 128 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(74 120 128 / var(--tw-ring-opacity));
 }
 .podcast-detail button.save {
   --tw-bg-opacity: 1;
