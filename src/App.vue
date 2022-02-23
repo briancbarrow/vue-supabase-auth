@@ -3,20 +3,22 @@
   <!-- Check if user is available in the store, if not show auth compoenent -->
   <Auth v-if="!store.state.user" />
   <!-- If user is available, show the app -->
-  <HelloWorld v-else msg="Hello World" />
+  <div v-else class="app">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
 import Auth from "./components/Auth.vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import PodcastFeed from "./components/PodcastFeed.vue";
 
 import { store } from "./store";
 import { supabase } from "./supabase";
 
 export default {
   components: {
+    PodcastFeed,
     Auth,
-    HelloWorld,
   },
   setup() {
     // we initially verify if a user is logged in with Supabase
@@ -26,6 +28,8 @@ export default {
       if (event == "SIGNED_OUT") {
         store.state.user = null;
       } else {
+        // make call to supabase to get Podcasts for the user
+        store.getPodcastsFromDB();
         store.state.user = session.user;
       }
     });
