@@ -65,6 +65,7 @@ export default {
     }
 
     return {
+      // exposing the isInUserPodcasts computed property
       isInUserPodcasts,
       addPodcast,
     };
