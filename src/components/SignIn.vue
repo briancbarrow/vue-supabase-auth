@@ -28,8 +28,8 @@ import { supabase } from "../supabase";
 
 export default {
   setup() {
-    const email = ref("briancbarrow@gmail.com");
-    const password = ref("Test123");
+    const email = ref("");
+    const password = ref("");
 
     const handleSignin = async () => {
       try {
