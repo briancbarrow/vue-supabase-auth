@@ -13,7 +13,6 @@
     </div>
     <button @click="getRssFeed()" type="button" class="">Get Feed</button>
     <podcast-info v-if="podcast.title && !requestError" :podcast="podcast" />
-    <feed-request-error v-if="requestError" />
   </div>
   <!-- Loop through podcasts and display them -->
   <div class="feeds">
@@ -35,12 +34,10 @@ import { supabase } from "../supabase";
 import { store } from "../store";
 
 import PodcastInfo from "./PodcastInfo.vue";
-import FeedRequestError from "./FeedRequestError.vue";
 
 export default {
   components: {
     PodcastInfo,
-    FeedRequestError,
   },
 
   setup() {
